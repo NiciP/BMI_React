@@ -1,23 +1,17 @@
 {
-  "name": "my-package",
-  "scripts": {
-    "build": "babel src -d lib",
-    "test": "jest"
-  },
   "name": "bmi_calculator",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "features": "jest -c jest.config.js"
+  },
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,8 +23,13 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
     "jest-dev-server": "^3.9.0",
     "jest-puppeteer": "^3.9.0",
-    "puppeteer": "^1.12.2"
+    "puppeteer": "^1.12.2",
+    "react-scripts": "^2.1.5",
+    "react-test-renderer": "^16.8.3",
+    "sinon": "^7.2.7"
   }
 }

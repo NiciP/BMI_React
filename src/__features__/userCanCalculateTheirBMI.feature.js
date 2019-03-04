@@ -1,6 +1,7 @@
 describe('BMI Converter', () => {
     beforeAll(async () => {
         // visit the application running on the Jest Development Server
+        await jest.setTimeout(1000);
         await page.goto('http://localhost:3000');
     });
 
@@ -16,7 +17,6 @@ describe('BMI Converter', () => {
     describe('Metric method', async () => {
         beforeEach( async () => {
             // This before block will be executed prior to each test in this describe block
-            await page.select('select[id="method"]', 'metric')
             await page.type('input[name="weight"]', '95')
             await page.type('input[name="height"]', '186')
         })
@@ -30,20 +30,20 @@ describe('BMI Converter', () => {
         })
     })
 
-    describe('Imperial method', async () => {
-        beforeEach( async () => {
-            // This before block will be executed prior to each test in this describe block
-            await page.select('select[id="method"]', 'imperial')
-            await page.type('input[name="weight"]', '200')
-            await page.type('input[name="height"]', '73')
-        })
+    // describe('Imperial method', async () => {
+    //     beforeEach( async () => {
+    //         // This before block will be executed prior to each test in this describe block
+    //         await page.select('select[id="method"]', 'imperial')
+    //         await page.type('input[name="weight"]', '200')
+    //         await page.type('input[name="height"]', '73')
+    //     })
 
-        it('displays assesment', async () => {   
-            await expect(page).toMatch('You are Overweight')
-        })
+    //     it('displays assesment', async () => {   
+    //         await expect(page).toMatch('You are Overweight')
+    //     })
 
-        it('displays BMI value', async () => {   
-            await expect(page).toMatch('BMI of 26.38')
-        })
-    })
+    //     it('displays BMI value', async () => {   
+    //         await expect(page).toMatch('BMI of 26.38')
+    //     })
+    // })
 }); 
