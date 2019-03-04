@@ -1,4 +1,9 @@
 {
+  "name": "my-package",
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "jest"
+  },
   "name": "bmi_calculator",
   "version": "0.1.0",
   "private": true,
